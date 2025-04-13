@@ -1,0 +1,12 @@
+name = "astro-worker-site"
+type = "javascript"
+compatibility_date = "2025-4-01"
+
+[build]
+command = "npm run build"
+
+[vars]
+NODE_ENV = "production"
+
+[assets]
+directory = "./dist"
