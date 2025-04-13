@@ -8,7 +8,7 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   integrations: [react(), mdx()],
   output: 'server', // 确保使用服务端渲染
-  adapter: cloudflare(),
+  adapter: cloudflare(), // 使用 Cloudflare 适配器
   devToolbar: { enabled: false }, // 关闭开发工具栏
   server: {
     headers: {

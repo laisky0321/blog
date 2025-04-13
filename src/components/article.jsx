@@ -1,7 +1,3 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
-import { useLayoutEffect } from 'react';
-
 
 const ArticleCard = ({ article_key, title, description, color, time }) => {
     const handleClick = () => {
