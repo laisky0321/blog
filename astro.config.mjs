@@ -2,13 +2,12 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
-import cloudflare from '@astrojs/cloudflare';
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), mdx()],
-  output: 'server', // 确保使用服务端渲染
-  adapter: cloudflare(), // 使用 Cloudflare 适配器
+  adapter: vercel(), // 使用 Vercel 适配器
   devToolbar: { enabled: false }, // 关闭开发工具栏
   vite: {
     resolve: {
