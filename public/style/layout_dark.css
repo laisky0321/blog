@@ -60,7 +60,7 @@ body {
 .snoopy {
     position: absolute; /* 修复 position 的值 */
     width: 76px;
-    top: 18px;
+    top: 23px;
     right: 170px;
     margin-right: 8px; /* 修复 margin 的值 */
 }
