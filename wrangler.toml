@@ -1,10 +1,9 @@
-name = "blog"
-type = "javascript"
-compatibility_date = "2025-04-01"
+name = "astro-worker-site"
+compatibility_date = "2025-4-01"
+main = "src/index.js"  # Worker入口脚本
 
 [build]
 command = "npm run build"
 
-[upload]
-format = "modules"
-dir = "./dist"
+[assets]
+directory = "./dist"  # 指定构建后的输出目录
