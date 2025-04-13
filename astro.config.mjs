@@ -7,6 +7,7 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), mdx()],
+  output: 'server', // 使用服务器端渲染
   adapter: vercel(), // 使用 Vercel 适配器
   devToolbar: { enabled: false }, // 关闭开发工具栏
   vite: {
