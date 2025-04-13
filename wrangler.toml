@@ -1,4 +1,4 @@
-name = "astro-worker-site"
+name = "blog"
 compatibility_date = "2025-04-01"
 main = "src/index.js"  # Worker入口脚本
 
