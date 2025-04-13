@@ -7,7 +7,7 @@
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
   }
 .article-container * {
-    color: #6d6d6d; /* 确保容器内所有子元素的文字颜色都变为白色 */
+    color: #d6d6d6; /* 确保容器内所有子元素的文字颜色都变为白色 */
 }
   
 .nav-container {
@@ -23,7 +23,7 @@
 }
 
 .nav-container * {
-    color: #6d6d6d; /* 确保容器内所有子元素的文字颜色都变为白色 */
+    color: #d6d6d6; /* 确保容器内所有子元素的文字颜色都变为白色 */
 }
 
 
