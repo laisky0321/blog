@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const About = () => {
+const About = ({DarkModeinit}) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const toggleDropdown = () => {
@@ -16,12 +16,13 @@ const About = () => {
                         position: 'absolute', 
                         top: '50px',
                         right: '5px', 
-                        backgroundColor: 'white',
+                        backgroundColor: DarkModeinit ? ' #1f1f1f' : 'white',
                         border: '1px solid #ccc', 
                         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
                         borderRadius: '8px',
                         padding: '10px',
                         zIndex: 1000,
+                        color: DarkModeinit ? '#d6d6d6' : 'black',
                     }}
                 >
                     <h3>About Me</h3>
@@ -39,12 +40,12 @@ const About = () => {
                 />
                 {isDropdownOpen ? (
                     <img
-                        src="/img/down.svg" 
+                        src={DarkModeinit ? "/img/down_dark.svg" : "/img/down.svg"} 
                         style={{ width: '24px', height: '24px', transform: "scale(1, -1)", transformOrigin: "center" }}
                     />
                 ) : (
                     <img
-                        src="/img/down.svg" 
+                        src={DarkModeinit ? "/img/down_dark.svg" : "/img/down.svg"} 
                         style={{ width: '24px', height: '24px' }}
                     />
                 )}

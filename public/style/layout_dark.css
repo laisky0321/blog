@@ -59,8 +59,8 @@ body {
 
 .snoopy {
     position: absolute; /* 修复 position 的值 */
-    width: 76px;
-    top: 23px;
-    right: 170px;
+    width: 90px;
+    top: 16px;
+    right: 160px;
     margin-right: 8px; /* 修复 margin 的值 */
 }
