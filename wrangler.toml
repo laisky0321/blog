@@ -2,7 +2,7 @@ name = "blog"
 compatibility_date = "2025-04-01"
 
 [build]
-command = ""
+command = "npm run build"
 
 [assets]
 directory = "./dist"  # 指定构建后的输出目录
