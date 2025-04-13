@@ -1,0 +1,46 @@
+---
+import About from "../components/about"
+import DarkModeToggle from "../components/theme"
+
+const theme = Astro.cookies.get('theme')?.value || 'light';
+
+const cssFile1 = theme === 'dark' ? '/style/layout_dark.css' : '/style/layout.css';
+const cssFile2 = theme === 'dark' ? '/style/article_dark.css' : '/style/article.css';
+const cssFile3 = theme === 'dark' ? '/style/deliver_dark.css' : '/style/deliver.css';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/img/favicon.ico" />
+		<link rel="stylesheet" href={cssFile1} />  <!-- 添加主题样式表 -->
+		<link rel="stylesheet" href={cssFile2} />  <!-- 添加文章主题样式表 -->
+		<link rel="stylesheet" href={cssFile3} />  <!-- 添加交付主题样式表 -->
+		<meta name="generator" content={Astro.generator} />
+		<title>小赖的网站</title>
+	</head>
+	<body>
+		<header>
+			<nav class="head">
+				<div class="logo">
+					<img src="/logo.webp" alt="Astro Basics Logo" />
+				</div>
+				<img src="/img/snoopy.png" width="80" alt="Snoopy" class="snoopy"/>
+				<div class="other">
+					<DarkModeToggle 
+						DarkModeinit={theme === 'dark'}
+						client:load
+					/>
+					<About 
+						client:load 
+					/>
+				</div>
+			</nav>
+		</header>
+		<slot />
+	</body>
+</html>
+
+

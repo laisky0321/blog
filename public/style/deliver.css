@@ -1,0 +1,21 @@
+.article-container {
+    width: 960px;
+    max-width: 100%;
+    margin: 60px auto;
+    padding: 20px 40px;
+    background: #fff;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-container {
+    position: fixed;
+    right: 10px;
+    top: 200px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+    transform: translate(0, 0);
+    transition: transform 500ms ease;
+  }
+  
