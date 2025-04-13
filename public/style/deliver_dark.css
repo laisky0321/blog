@@ -13,19 +13,34 @@
 .nav-container {
     position: fixed;
     right: 10px;
-    top: 200px;
+    top: 55%;
+    transform: translate(0, -50%);
     background-color: #1f1f1f;
     border-radius: 5px;
     border: 1px solid #828282;
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
-    transform: translate(0, 0);
+    box-shadow: 0 0 10px 0 rgba(200, 199, 199, 0.1);
+    max-width: 170px;
     transition: transform 500ms ease;
+    cursor: pointer;
 }
 
 .nav-container * {
     color: #d6d6d6; /* 确保容器内所有子元素的文字颜色都变为白色 */
 }
 
+.article-container p img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #a3a3a3;
+}
+
+.article-menu .title-anchor.active {
+    color:  #007bff60;  /* 高亮颜色 */
+    font-weight: bold; /* 可选：加粗 */
+    padding: 0.1em; /* 可选：加一点内边距 */
+  }
 
 .article-wrapper {
     background-color: #181818;

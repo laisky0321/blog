@@ -5,17 +5,35 @@
     padding: 20px 40px;
     background: #fff;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
-  }
+}
   
-  .nav-container {
-    position: fixed;
-    right: 10px;
-    top: 200px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #eee;
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
-    transform: translate(0, 0);
-    transition: transform 500ms ease;
-  }
+.nav-container {
+  position: fixed;
+  right: 10px;
+  top: 55%;
+  transform: translate(0, -50%);
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+  transition: transform 500ms ease;
+  max-width: 170px;
+  cursor: pointer;
+}
+
+.article-container p img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #a3a3a3;
+}
+
+/* 让 active 目录项突出 */
+.article-menu .title-anchor.active {
+  color:  #007bff;  /* 高亮颜色 */
+  font-weight: bold; /* 可选：加粗 */
+  padding: 0.1em; /* 可选：加一点内边距 */
+}
+
   
