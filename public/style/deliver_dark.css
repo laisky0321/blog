@@ -87,6 +87,7 @@
   /* 响应式优化 */
   @media (max-width: 960px) {
     .article-container {
+        width: auto;
         margin: 30px auto;
         padding: 20px;
     }
