@@ -3,10 +3,11 @@ import About from "../components/about"
 import DarkModeToggle from "../components/theme"
 
 const theme = Astro.cookies.get('theme')?.value || 'light';
+const isDarkMode = theme === 'dark';
 
-const cssFile1 = theme === 'dark' ? '/style/layout_dark.css' : '/style/layout.css';
-const cssFile2 = theme === 'dark' ? '/style/article_dark.css' : '/style/article.css';
-const cssFile3 = theme === 'dark' ? '/style/deliver_dark.css' : '/style/deliver.css';
+const cssFile1 = isDarkMode ? '/style/layout_dark.css' : '/style/layout.css';
+const cssFile2 = isDarkMode ? '/style/article_dark.css' : '/style/article.css';
+const cssFile3 = isDarkMode ? '/style/deliver_dark.css' : '/style/deliver.css';
 ---
 
 <!doctype html>
@@ -25,15 +26,16 @@ const cssFile3 = theme === 'dark' ? '/style/deliver_dark.css' : '/style/deliver.
 		<header>
 			<nav class="head">
 				<div class="logo">
-					<img src="/img/logo.webp" alt="Astro Basics Logo" />
+					<img src={isDarkMode ? "/img/logo_dark.webp" : "/img/logo.webp"} alt="logo" />
 				</div>
-				<img src="/img/snoopy.png" width="80" alt="Snoopy" class="snoopy"/>
+				<img src="/img/snoopy.webp" width="80" alt="Snoopy" class="snoopy"/>
 				<div class="other">
 					<DarkModeToggle 
-						DarkModeinit={theme === 'dark'}
+						DarkModeinit={isDarkMode}
 						client:load
 					/>
 					<About 
+						DarkModeinit={isDarkMode}
 						client:load 
 					/>
 				</div>

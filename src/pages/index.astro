@@ -41,7 +41,7 @@ if (catalog === null) {
 ---
 
 <Layout>
-	<ul class="catalog">
+	<ul class="catalog" style={{ display: 'flex', flexWrap: 'wrap' }}>
 		<li><a href='/'>Home</a></li>
 		{catalogList.map((catalogItem) => (
 			<li>
