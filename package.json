@@ -39,7 +39,8 @@
     "check": "astro build && tsc && wrangler deploy --dry-run",
     "deploy": "wrangler deploy",
     "dev": "astro dev",
-    "preview": "astro build && wrangler dev"
+    "preview": "astro build && wrangler dev",
+    "postbuild": "echo '_worker.js' > dist/.assetsignore"
   },
   "type": "module"
 }
