@@ -1,0 +1,58 @@
+.article-card {
+    background-color: #1f1f1f;
+    width: 400px;
+    border: 1px solid #dddddd14;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 160px; /* 设置固定高度，方便布局 */
+    position: relative;
+}
+
+.article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 10px rgba(134, 134, 134, 0.15);
+    border: 1px solid #dddddd82;
+}
+
+.article-title {
+    font-size: 1.5rem;
+    color: #d6d6d6;
+    margin: 0;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+
+.article-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+}
+
+.article-time {
+    font-size: 0.875rem;
+    color: #999;
+    margin: 0;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+.article-label {
+    position: absolute;
+    top: -1px; /* 距离顶部 16px */
+    right: 10px; /* 距离右侧 16px */
+    width: 50px; /* 设置图片宽度 */
+    height: auto; /* 保持图片比例 */
+    z-index: 1; /* 确保图片在其他内容之上 */
+}

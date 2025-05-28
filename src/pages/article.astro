@@ -1,0 +1,14 @@
+---
+import MD from "../components/deliver"
+import Layout from "../layouts/Layout.astro";
+
+
+var article_key = Astro.url.searchParams.get('key');
+console.log(`from article.astro: ${article_key}`);
+---
+<Layout>
+<MD
+article_key={article_key}
+client:load
+/>
+</Layout>

@@ -1,0 +1,53 @@
+---
+import { astroCalledServerError } from "astro:actions";
+import About from "../components/about"
+import DarkModeToggle from "../components/theme"
+
+const theme = Astro.cookies.get('theme')?.value || 'light';
+const isDarkMode = theme === 'dark';
+
+const cssFile1 = isDarkMode ? '/style/layout_dark.css' : '/style/layout.css';
+const cssFile2 = isDarkMode ? '/style/article_dark.css' : '/style/article.css';
+let cssFile3 = ""
+if (Astro.url.pathname.startsWith("/article")){
+	cssFile3 = isDarkMode ? '/style/deliver_dark.css' : '/style/deliver.css';
+}
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/img/favicon.ico" />
+		<link rel="stylesheet" href={cssFile1} />  <!-- 添加主题样式表 -->
+		<link rel="stylesheet" href={cssFile2} />  <!-- 添加文章主题样式表 -->
+		{cssFile3 && <link rel="stylesheet" href={cssFile3} />}
+		<title>小赖的网站</title>
+	</head>
+	<body>
+		<header>
+			<nav class="head">
+				<a href="/">
+					<div class="logo">
+						<img src={isDarkMode ? "/img/logo_dark.webp" : "/img/logo.webp"} alt="logo" />
+					</div>
+				</a>
+				<img src="/img/snoopy.webp" width="80" alt="Snoopy" class="snoopy"/>
+				<div class="other">
+					<DarkModeToggle 
+						DarkModeinit={isDarkMode}
+						client:load
+					/>
+					<About 
+						DarkModeinit={isDarkMode}
+						client:load 
+					/>
+				</div>
+			</nav>
+		</header>
+		<slot />
+	</body>
+</html>
+
+
