@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ArticleCard from '../components/article';
+export const prerender = false;
 
 const response = await fetch('http://post.laiweimin.cn/all.json'); // 替换为你的远程 JSON 文件 URL
-const data = await response.json();  // 解析 JSON 数据
+const data: any = await response.json();  // 解析 JSON 数据
 
 // 定义 catalogList 的类型
 interface CatalogItem {
