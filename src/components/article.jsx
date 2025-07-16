@@ -7,7 +7,7 @@ const ArticleCard = ({ article_key, title, description, color, time }) => {
 
     const handleMouseHover = async () => {
               const cached = await get(article_key);
-              if (!cached) {
+              if (!cached || !cached.expire || Date.now() > cached.expire) {
                 const res = await fetch(`https://post.laiweimin.cn/${article_key}.md`);
                 const text = await res.text();
                 const expireMs = 60 * 60 * 1000;
