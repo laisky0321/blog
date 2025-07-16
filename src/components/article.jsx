@@ -10,7 +10,12 @@ const ArticleCard = ({ article_key, title, description, color, time }) => {
               if (!cached) {
                 const res = await fetch(`https://post.laiweimin.cn/${article_key}.md`);
                 const text = await res.text();
-                set(article_key, text);
+                const expireMs = 60 * 60 * 1000;
+                set(article_key, {
+                    text,
+                    time: Date.now(),
+                    expire: Date.now() + expireMs
+                });
               }
       
     };

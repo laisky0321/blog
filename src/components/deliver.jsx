@@ -14,7 +14,7 @@ export default function MD({ article_key }) {
   useEffect(() => {
     const fetchContent = async () => {
       const cached = await get(article_key);
-      if (cached) {
+      if (cached && cached.expire && Date.now() < cached.expire) {
         setContent(cached);
         return;
       }
@@ -22,7 +22,12 @@ export default function MD({ article_key }) {
       const res = await fetch(`https://post.laiweimin.cn/${article_key}.md`);
       const text = await res.text();
       setContent(text);
-      set(article_key, text);
+      const expireMs = 60 * 60 * 1000;
+      set(article_key, {
+        text,
+        time: Date.now(),
+        expire: Date.now() + expireMs
+      });
     };
 
     fetchContent();
