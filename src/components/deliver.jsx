@@ -15,7 +15,7 @@ export default function MD({ article_key }) {
     const fetchContent = async () => {
       const cached = await get(article_key);
       if (cached && cached.expire && Date.now() < cached.expire) {
-        setContent(cached);
+        setContent(cached.text);
         return;
       }
 
