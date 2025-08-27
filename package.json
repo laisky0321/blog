@@ -14,23 +14,23 @@
     "publish": true
   },
   "dependencies": {
-    "@astrojs/cloudflare": "12.5.0",
-    "@astrojs/mdx": "4.2.4",
+    "@astrojs/cloudflare": "12.6.5",
+    "@astrojs/mdx": "4.3.4",
     "@astrojs/react": "^4.3.0",
-    "@astrojs/rss": "4.0.11",
-    "@astrojs/sitemap": "3.3.0",
-    "astro": "5.7.4",
+    "@astrojs/rss": "4.0.12",
+    "@astrojs/sitemap": "3.5.1",
+    "astro": "5.13.3",
     "highlight.js": "^11.11.1",
     "idb-keyval": "^6.2.2",
     "markdown-navbar": "^1.4.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "react-markdown": "^10.1.0",
     "rehype-highlight": "^7.0.2",
-    "typescript": "5.8.3"
+    "typescript": "5.9.2"
   },
   "devDependencies": {
-    "wrangler": "4.12.0"
+    "wrangler": "4.33.0"
   },
   "scripts": {
     "astro": "astro",
