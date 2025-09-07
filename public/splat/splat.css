@@ -2,7 +2,7 @@
   padding: 5px;
   cursor: pointer;
   transition: transform 0.2s ease;
-  position: fixed;
+  position: absolute;
   top :5px;
   right: 145px;
   z-index: 200;

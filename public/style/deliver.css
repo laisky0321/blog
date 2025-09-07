@@ -20,6 +20,10 @@
   display: none;
 }
 
+#launcher {
+  display: none;
+}
+
 /* 图片样式保留 */
 .markdown-body p img {
   max-width: 100% !important;

@@ -34,7 +34,9 @@ if (Astro.url.pathname.startsWith("/article")){
 						<img src={isDarkMode ? "/img/logo_dark.webp" : "/img/logo.webp"} alt="logo" />
 					</div>
 				</a>
-				
+				<div id="launcher">
+					<img src="/splat/img/icons-3splat-dark.gif" alt="Start Splat Game">
+				</div>
 				<img src="/img/snoopy.webp" width="80" alt="Snoopy" class="snoopy"/>
 				<div class="other">
 					<DarkModeToggle 
@@ -49,9 +51,9 @@ if (Astro.url.pathname.startsWith("/article")){
 			</nav>
 		</header>
 		<slot />
-		
-
-
+		<canvas id="ink-canvas"></canvas>
+		<button id="clear-btn"><img src="/splat/img/clear.svg" alt="Clear" style="width: 32px; height: 32px; vertical-align: middle;"></button>
+		<script src="/splat/splat.js" defer></script>
 	</body>
 </html>
 
