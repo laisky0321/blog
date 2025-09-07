@@ -69,6 +69,18 @@ body {
     position: absolute; /* 修复 position 的值 */
     width: 90px;
     top: 16px;
-    right: 160px;
+    right: 192px;
     margin-right: 8px; /* 修复 margin 的值 */
+}
+
+@media (max-width: 570px) {
+  .snoopy {
+    right: 140px;
+  }
+}
+
+@media (max-width: 460px) {
+  .snoopy {
+    display: none;
+  }
 }

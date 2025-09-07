@@ -55,7 +55,7 @@ if (catalog === null) {
 			</li>
 		))}
 	</ul>
-	<div class="article-list" style="display: flex; flex-wrap: wrap; gap: 16px; margin: 0 16px;">
+	<div class="article-list">
 		{cards
 			.filter((item) => catalog === '0' || item.catalog.toString() === catalog) // 根据 catalog 字段筛选
 			.map((item) => (
@@ -69,5 +69,11 @@ if (catalog === null) {
 				/>
 			))}
 	</div>
+	<div id="launcher">
+					<img src="/splat/img/icons-3splat-dark.gif" alt="Start Splat Game">
+				</div>
+						<canvas id="ink-canvas"></canvas>
+		<button id="clear-btn"><img src="/splat/img/clear.svg" alt="Clear" style="width: 32px; height: 32px; vertical-align: middle;"></button>
+		<script src="/splat/splat.js" defer></script>
 </Layout>
 

@@ -22,6 +22,7 @@ if (Astro.url.pathname.startsWith("/article")){
 		<link rel="icon" type="image/svg+xml" href="/img/favicon.ico" />
 		<link rel="stylesheet" href={cssFile1} />  <!-- 添加主题样式表 -->
 		<link rel="stylesheet" href={cssFile2} />  <!-- 添加文章主题样式表 -->
+		<link rel="stylesheet" href="/splat/splat.css" />
 		{cssFile3 && <link rel="stylesheet" href={cssFile3} />}
 		<title>小赖的网站</title>
 	</head>
@@ -33,6 +34,7 @@ if (Astro.url.pathname.startsWith("/article")){
 						<img src={isDarkMode ? "/img/logo_dark.webp" : "/img/logo.webp"} alt="logo" />
 					</div>
 				</a>
+				
 				<img src="/img/snoopy.webp" width="80" alt="Snoopy" class="snoopy"/>
 				<div class="other">
 					<DarkModeToggle 
@@ -47,6 +49,9 @@ if (Astro.url.pathname.startsWith("/article")){
 			</nav>
 		</header>
 		<slot />
+		
+
+
 	</body>
 </html>
 

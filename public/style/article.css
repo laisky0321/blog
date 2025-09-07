@@ -1,27 +1,31 @@
 :root {
     --background-color:  #f9f9f9;
-    --border-color:  #ddd;
     --font-color: #333;
+}
+
+.article-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+    gap: 16px;
+    padding: 16px;
+    margin: 0 auto;
 }
 
 .article-card {
     background-color: var(--background-color);
-    width: 30%;
-    max-width: 400px;
-    min-width: 300px;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 16px;
-    margin: 16px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 160px; /* 设置固定高度，方便布局 */
+    height: 160px;
     position: relative;
 }
+
 
 .article-card:hover {
     transform: translateY(-4px);
