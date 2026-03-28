@@ -47,7 +47,7 @@ const About = ({DarkModeinit}) => {
                     <h1>About Me</h1>
                     <p>山川是不卷收的画卷，日月为你掌灯伴读。</p>
                     <hr />
-                    <p>Email: laiweimin0321@gmail.com</p>
+                    <p>Email: blog@lai.ski</p>
                     <p>GitHub: <a href="https://github.com/laisky0321" target="_blank" rel="noopener noreferrer">laisky0321</a></p>
                 </div>
             ) : null}
