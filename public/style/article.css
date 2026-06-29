@@ -1,11 +1,11 @@
 :root {
-    --background-color:  #f9f9f9;
+    --background-color: #f9f9f9;
     --font-color: #333;
 }
 
 .article-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 16px;
     padding: 16px;
     margin: 0 auto;
@@ -17,7 +17,9 @@
     border-radius: 8px;
     padding: 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -25,7 +27,6 @@
     height: 160px;
     position: relative;
 }
-
 
 .article-card:hover {
     transform: translateY(-4px);
@@ -35,7 +36,7 @@
 .article-title {
     font-size: 1.5rem;
     color: var(--font-color);
-    max-width: calc(100% - 70px); 
+    max-width: calc(100% - 70px);
     margin: 0;
     position: absolute;
     top: 16px;
@@ -50,7 +51,7 @@
     position: absolute;
     bottom: 16px;
     left: 16px;
-    max-width: calc(100% - 100px); 
+    max-width: calc(100% - 100px);
 }
 
 .article-time {

@@ -12,6 +12,7 @@ let cssFile3 = ""
 if (Astro.url.pathname.startsWith("/article")){
 	cssFile3 = isDarkMode ? '/style/deliver_dark.css' : '/style/deliver.css';
 }
+const hljsTheme = isDarkMode ? '/style/highlight-dark.css' : '/style/highlight-light.css';
 ---
 
 <!doctype html>
@@ -23,7 +24,8 @@ if (Astro.url.pathname.startsWith("/article")){
 		<link rel="stylesheet" href={cssFile1} />  <!-- 添加主题样式表 -->
 		<link rel="stylesheet" href={cssFile2} />  <!-- 添加文章主题样式表 -->
 		<link rel="stylesheet" href="/splat/splat.css" />
-		{cssFile3 && <link rel="stylesheet" href={cssFile3} />}
+			<link rel="stylesheet" href={hljsTheme} />
+			{cssFile3 && <link rel="stylesheet" href={cssFile3} />}
 		<title>小赖的网站</title>
 	</head>
 	<body>
@@ -39,13 +41,13 @@ if (Astro.url.pathname.startsWith("/article")){
 				</div>
 				<img src="/img/snoopy.webp" width="80" alt="Snoopy" class="snoopy"/>
 				<div class="other">
-					<DarkModeToggle 
+					<DarkModeToggle
 						DarkModeinit={isDarkMode}
 						client:load
 					/>
-					<About 
+					<About
 						DarkModeinit={isDarkMode}
-						client:load 
+						client:load
 					/>
 				</div>
 			</nav>
@@ -56,5 +58,3 @@ if (Astro.url.pathname.startsWith("/article")){
 		<script src="/splat/splat.js" defer></script>
 	</body>
 </html>
-
-

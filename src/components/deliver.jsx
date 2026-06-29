@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
-import MarkNav from 'markdown-navbar';
-import { get, set } from 'idb-keyval';
-import remarkGfm from 'remark-gfm';
-import rehypeHighlight from 'rehype-highlight';
-import rehypeRaw from 'rehype-raw';
+import React, { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import MarkNav from "markdown-navbar";
+import { get, set } from "idb-keyval";
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import rehypeRaw from "rehype-raw";
 // import 'github-markdown-css/github-markdown-light.css';
-import 'highlight.js/styles/github.css';
 
 export default function MD({ article_key }) {
-  const [content, setContent] = useState('');
+  const [content, setContent] = useState("");
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -26,14 +25,14 @@ export default function MD({ article_key }) {
       set(article_key, {
         text,
         time: Date.now(),
-        expire: Date.now() + expireMs
+        expire: Date.now() + expireMs,
       });
     };
 
     fetchContent();
   }, [article_key]);
 
-  const adjustedContent = `# 占位标题\n${content.replace(/<[^>]+>/g, '')}`;  
+  const adjustedContent = `# 占位标题\n${content.replace(/<[^>]+>/g, "")}`;
 
   return (
     <div className="article-wrapper">
@@ -42,12 +41,12 @@ export default function MD({ article_key }) {
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[
             rehypeRaw,
-            [rehypeHighlight, { ignoreMissing: true }]
+            [rehypeHighlight, { ignoreMissing: true }],
           ]}
           components={{
             // 自定义代码块渲染
             code({ node, inline, className, children, ...props }) {
-              const match = /language-(\w+)/.exec(className || '');
+              const match = /language-(\w+)/.exec(className || "");
               return !inline && match ? (
                 <div className="code-block">
                   <div className="code-header">
@@ -65,17 +64,21 @@ export default function MD({ article_key }) {
             },
             // 自定义表格样式
             table({ children }) {
-              return <div className="table-wrapper"><table>{children}</table></div>
-            }
+              return (
+                <div className="table-wrapper">
+                  <table>{children}</table>
+                </div>
+              );
+            },
           }}
         >
           {content}
         </ReactMarkdown>
       </div>
-      
+
       {content && (
         <div className="nav-container">
-          <MarkNav 
+          <MarkNav
             className="article-menu github-nav"
             source={adjustedContent}
             headingTopOffset={80}
@@ -83,10 +86,12 @@ export default function MD({ article_key }) {
             includeFirstHeading={true}
             // 自定义导航样式
             renderers={{
-              nav: ({ children }) => <div className="nav-inner">{children}</div>,
+              nav: ({ children }) => (
+                <div className="nav-inner">{children}</div>
+              ),
               item: ({ level, children }) => (
                 <div className={`nav-item level-${level}`}>{children}</div>
-              )
+              ),
             }}
           />
         </div>
